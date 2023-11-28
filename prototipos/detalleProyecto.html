@@ -26,15 +26,24 @@
         <link rel="stylesheet" href="styles.css" />
 
         <link rel="stylesheet" href="styles.css" />
-        <title>Login</title>
+        <title>Prototipos vanilla games</title>
+
+        <style>
+            /* Modificamos aspecto de nav-tabs y nav-links */
+            .nav-tabs,
+            .nav-link.active {
+                border-bottom: 0;
+                /* background-color: red; */
+            }
+        </style>
     </head>
-    <body class="pt-5" style="overflow-x: hidden; padding-bottom: 100px">
+    <body class="pt-5" style="overflow-x: hidden; padding-bottom: 100px">       
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div class="container">
                     <a class="navbar-brand" href="#"
                         ><img
-                            src="./images/logo.svg"
+                            src=".images/logo.svg"
                             alt=""
                             width="30"
                             height="24"
@@ -68,53 +77,66 @@
                         </ul>
                         <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <button class="ms-2 btn btn-outline-light">
-                                    Regístrate
-                                    <i class="bi bi-box-arrow-in-right"></i>
-                                </button>
+                                <a class="nav-link active" aria-current="page" href="#">PROYECTOS</a>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src=".images/avatar.svg" alt="" width="25">
+                                </a>
+                                <ul class="dropdown-menu me-0" style="left: -100px; width: 100px;">
+                                    <li class="text-light text-center p-2">
+                                        <p>user@email.com</p>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Acciónn</a></li>
+                                    <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                                </ul>
+                            </li>
+                            
                         </ul>
+                        
                     </div>
                 </div>
             </nav>
         </header>
         <main>
             <div class="container">
-                <h1 class="mt-5 text-center">Inicia sesión</h1>
-                <div class="m-5 mx-auto" style="max-width: 400px">
-                    <form novalidate action="" class="form border shadow-sm p-3">
-                          <!-- Email -->
-                        <label for="email" class="form-label">Email:</label>
-                        <input required type="email" class="form-control" />
-                        <div class="invalid-feedback">
-                            El formato del email no es correcto
-                        </div>
-                        <!-- Contraseña -->
-                        <label for="pass" class="form-label mt-3">Contraseña:</label>
-                        <input required minlength="6" id="pass" type="password" class="form-control" />
-                        <div class="invalid-feedback">
-                            La contraseña debe tener como mínimo 6 caracteres
-                        </div>
-
-                        <div class="form-check mt-3">
-                            <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                                checked
-                            />
-                            <label class="form-check-label" for="flexCheckChecked">
-                                Recordar sesión
-                            </label>
-                        </div>
-                        <a class="d-block text-end" href="#">¿Has olvidado tu contraseña?</a>
-                        <a class="btn btn-primary w-100 mt-3" href="#">Iniciar sesión</a>
-                    </form>
-                    <a class="d-block mt-5 btn btn-secondary mx-auto" href="#"
-                        >¿Eres nuevo? Regístrate</a
-                    >
+                <h1 class="mt-5">Detalle del proyecto</h1>
+                <div class="d-flex justify-content-end">
+                    <bottom class="btn btn-outline-secondary mt-5">
+                        <i class="bi bi-arrow-bar-left" style="font-size: 1em;"></i>
+                        Volver</bottom>
                 </div>
+                
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4 mb-3">
+                        <img src=".images/juego.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p>
+                            <p><strong>Nombre: </strong><span id="nombre">TETRIS</span></p>
+                            <p><strong>Descripción: </strong><span id="nombre">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam modi dicta iste debitis recusandae perspiciatis quae. Eius impedit saepe autem velit voluptate, odio sequi expedita nisi est molestiae quo quisquam!</span></p>
+                            <p><strong>Estado: </strong><span id="nombre">Estado</span></p>
+                            <p><strong>Fecha: </strong><span id="nombre">12/12/2023</span></p>
+                            <p><strong>Enlace: </strong><span id="nombre">http://www.enlaceapp.com</span></p>
+                            <p><strong>Repositorio: </strong><span id="nombre">carrebola.github.com/123456</span></p>
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="container fixed-bottom d-flex justify-content-end"
+                    style="padding: 0px 0px 100px 0px"
+                >
+                    <button
+                        class="btn btn-success rounded-circle fs-3 shadow"
+                        style="width: 50px"
+                    >
+                        <i class="bi bi-pencil"></i>
+                    </button>
+                </div>
+                
             </div>
         </main>
         <footer class="">
@@ -122,7 +144,7 @@
                 <div class="container">
                     <a class="navbar-brand" href="http://www.fpllefia.com">
                         <img
-                            src="./images/logo.svg"
+                            src=".images/logo.svg"
                             alt="fpllefia"
                             width="30"
                             height="24"
@@ -142,22 +164,6 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"
         ></script>
-        <!-- Script para la validación del formulario -->
-<script>
-    //Capturamos el formulario en una variable
-    const formulario = document.querySelector("form")
-    //Detectamos su evento submit (enviar)
-    formulario.addEventListener("submit", (event) => {
-      //Comprobamos si el formulario no valida 
-      if (!formulario.checkValidity()) {
-        //Detenemos el evento enviar (submit)
-        event.preventDefault()
-        event.stopPropagation()
-      }
-      //Y añadimos la clase 'was-validate' para que se muestren los mensajes
-      formulario.classList.add('was-validated')
-    });
-  </script>
     </body>
 </html>
 
