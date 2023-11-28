@@ -33,8 +33,8 @@ Necesitamos organizarnos un poco. Vamos a planificar como vamos a llevar a cabo 
     i.Realizaremos un Benchmarking (para copiarnos de la competencia)
     ii.Crearemos un modelo de usuarios
     iii.Diseñaremos los prototipos de bajo nivel(bocetos, wireframes)
-    iv.Diseñaremos el mockup (prototipo de alto nivel) junto a la guía de estilos (usaremos la aplicación Figma)
-    v.Haremos pruebas de usabilidad y rediseñaremos los prototipos.
+    5.Diseñaremos el mockup (prototipo de alto nivel) junto a la guía de estilos (usaremos la aplicación Figma)
+    5.Haremos pruebas de usabilidad y rediseñaremos los prototipos.
 5. **Programación del frontend (html/css/js)**:Maquetaremos los prototipos (html/css) y diseñaremos la lógica de validación de cliente
 6. **Programación del backend**: Utilizaremos un backend como servicio (SUPABASE) para:
     i.Crear las bases de datos
@@ -122,11 +122,11 @@ Es el momento de ser más concretos y detenernos a reflexionar en cada uno de lo
 
 **Flujo básico**:
 
-i. El usuario navega a la página de registro.
-ii. El usuario introduce su nombre, apellidos, email y contraseña.
-iii. El sistema valida que los campos estén completos y que el email no esté registrado previamente.
-iv. El sistema crea un nuevo usuario con los datos proporcionados.
-v. El sistema muestra un mensaje de confirmación y redirige al usuario a la página vi. de inicio.
+1. El usuario navega a la página de registro.
+2. El usuario introduce su nombre, apellidos, email y contraseña.
+3. El sistema valida que los campos estén completos y que el email no esté registrado previamente.
+4. El sistema crea un nuevo usuario con los datos proporcionados.
+5. El sistema muestra un mensaje de confirmación y redirige al usuario a la página 6. de inicio.
 
 **Flujos alternativos**:
 
@@ -140,10 +140,10 @@ v. El sistema muestra un mensaje de confirmación y redirige al usuario a la pá
 
 **Flujo básico**:
 
-i. El usuario navega a la página de registro.
-ii. El usuario selecciona la opción 'Recuperar contraseña'
-iii. El sistema valida que el campo 'email' esté completo y que el email esté registrado previamente.
-iv. El sistema muestra un mensaje de confirmación de envio del mail para la recuperación de contraseña y redirige al usuario a la página de inicio.
+1. El usuario navega a la página de registro.
+2. El usuario selecciona la opción 'Recuperar contraseña'
+3. El sistema valida que el campo 'email' esté completo y que el email esté registrado previamente.
+4. El sistema muestra un mensaje de confirmación de envio del mail para la recuperación de contraseña y redirige al usuario a la página de inicio.
 
 **Flujos alternativos**:
 
@@ -155,10 +155,10 @@ iv. El sistema muestra un mensaje de confirmación de envio del mail para la rec
 
 **Flujo básico**:
 
-i. El usuario navega a la página de inicio de sesión.
-ii. El usuario introduce su email y contraseña.
-iii. El sistema valida las credenciales y crea una sesión para el usuario.
-iv. El sistema redirige al usuario a la página principal de la aplicación.
+1. El usuario navega a la página de inicio de sesión.
+2. El usuario introduce su email y contraseña.
+3. El sistema valida las credenciales y crea una sesión para el usuario.
+4. El sistema redirige al usuario a la página principal de la aplicación.
 **Flujos alternativos**:
 
 * 3a. Las credenciales son incorrectas: el sistema muestra un mensaje de error y no crea la sesión.
@@ -169,9 +169,9 @@ iv. El sistema redirige al usuario a la página principal de la aplicación.
 
 **Flujo básico**:
 
-i. El usuario hace clic en el botón de "cerrar sesión".
-ii. El sistema cierra la sesión del usuario.
-iii. El sistema redirige al usuario a la página de inicio.
+1. El usuario hace clic en el botón de "cerrar sesión".
+2. El sistema cierra la sesión del usuario.
+3. El sistema redirige al usuario a la página de inicio.
 ## 4. Ver/Editar perfil
 **Actores**: Usuario registrado.
 
@@ -179,10 +179,10 @@ iii. El sistema redirige al usuario a la página de inicio.
 
 **Flujo básico**:
 
-i. El usuario navega a la página de edición de perfil.
-ii. El usuario edita su nombre, apellidos y contraseña.
-iii. El sistema valida los campos y actualiza el perfil del usuario.
-iv. El sistema muestra un mensaje de confirmación.
+1. El usuario navega a la página de edición de perfil.
+2. El usuario edita su nombre, apellidos y contraseña.
+3. El sistema valida los campos y actualiza el perfil del usuario.
+5. El sistema muestra un mensaje de confirmación.
 **Flujos alternativos**:
 
 * 3a. El usuario intenta cambiar su email: el sistema valida que el email no esté registrado previamente.
@@ -193,10 +193,10 @@ iv. El sistema muestra un mensaje de confirmación.
 
 **Flujo básico**:
 
-i. El usuario navega a la página de proyectos.
-ii. El sistema muestra una lista de proyectos publicados por desarrolladores.
-iii. El usuario puede hacer clic en un proyecto para ver más detalles.
-iv. El usuario puede mostrar/filtrar los proyectos a partir de un buscador
+1. El usuario navega a la página de proyectos.
+2. El sistema muestra una lista de proyectos publicados por desarrolladores.
+3. El usuario puede hacer clic en un proyecto para ver más detalles.
+4. El usuario puede mostrar/filtrar los proyectos a partir de un buscador
 ## 6. Publicar proyecto
 **Actores**: Usuario registrado con perfil de desarrollador.
 
@@ -204,10 +204,10 @@ iv. El usuario puede mostrar/filtrar los proyectos a partir de un buscador
 
 **Flujo básico**:
 
-i. El usuario navega a la página de publicación de proyecto.
-ii. El usuario introduce el nombre, descripción, imagen representativa, enlaces de servidor y repositorio, estado y otra información relevante del proyecto.
-iii. El sistema valida los campos y crea un nuevo proyecto.
-iv. El sistema muestra un mensaje de confirmación y redirige al usuario a la página de proyectos.
+1. El usuario navega a la página de publicación de proyecto.
+2. El usuario introduce el nombre, descripción, imagen representativa, enlaces de servidor y repositorio, estado y otra información relevante del proyecto.
+3. El sistema valida los campos y crea un nuevo proyecto.
+4. El sistema muestra un mensaje de confirmación y redirige al usuario a la página de proyectos.
 **Flujos alternativos**:
 
 * 2a. El desarrollador decide no publicar el proyecto y selecciona la opción de cancelar.
@@ -222,13 +222,13 @@ iv. El sistema muestra un mensaje de confirmación y redirige al usuario a la p�
 
 **Flujo principal**:
 
-i. El usuario selecciona la opción de "Editar proyecto".
-ii. El sistema muestra la lista de proyectos previamente creados por el usuario.
-iii. El usuario selecciona el proyecto que desea editar.
-iv. El sistema muestra el formulario de edición del proyecto con la información actual del mismo.
-v. El usuario realiza los cambios necesarios en la información del proyecto y guarda los cambios.
-vi. El sistema valida la información ingresada por el usuario y actualiza la información del proyecto en la base de datos.
-vii. El sistema muestra una confirmación de que la información del proyecto ha sido actualizada correctamente.
+1. El usuario selecciona la opción de "Editar proyecto".
+2. El sistema muestra la lista de proyectos previamente creados por el usuario.
+3. El usuario selecciona el proyecto que desea editar.
+4. El sistema muestra el formulario de edición del proyecto con la información actual del mismo.
+5. El usuario realiza los cambios necesarios en la información del proyecto y guarda los cambios.
+6. El sistema valida la información ingresada por el usuario y actualiza la información del proyecto en la base de datos.
+7. El sistema muestra una confirmación de que la información del proyecto ha sido actualizada correctamente.
 ## 8. Eliminar proyecto:
 **Actor principal**: Desarrollador
 
@@ -238,11 +238,11 @@ vii. El sistema muestra una confirmación de que la información del proyecto ha
 
 **Flujo principal**:
 
-i. El usuario selecciona la opción de "Eliminar proyecto" del proyecto que desea eliminar.
-ii. El sistema muestra una confirmación de que el usuario está seguro de eliminar el proyecto seleccionado.
-iii. El usuario confirma que desea eliminar el proyecto.
-iv. El sistema elimina el proyecto de la base de datos y muestra una confirmación de que el proyecto ha sido eliminado correctamente.
-v. El sistema actualiza la información de proyectos.
+1. El usuario selecciona la opción de "Eliminar proyecto" del proyecto que desea eliminar.
+2. El sistema muestra una confirmación de que el usuario está seguro de eliminar el proyecto seleccionado.
+3. El usuario confirma que desea eliminar el proyecto.
+4. El sistema elimina el proyecto de la base de datos y muestra una confirmación de que el proyecto ha sido eliminado correctamente.
+5. El sistema actualiza la información de proyectos.
 ## 9. Ver/Editar usuario:
 **Actor principal**: Usuario administrador
 
@@ -252,11 +252,11 @@ v. El sistema actualiza la información de proyectos.
 
 **Flujo principal**:
 
-i. El usuario selecciona la opción de "Ver usuarios".
-ii. El sistema muestra una tabla con 'inputs' con los datos de los usuarios.
-iii. El administrador realiza los cambios necesarios en la información de los usuarios (incluido el rol y el estado) y guarda los cambios.
-iv. El sistema valida la información ingresada por el usuario y actualiza la información del usuario en la base de datos.
-v. El sistema muestra una confirmación de que la información del perfil ha sido actualizada correctamente.
+1. El usuario selecciona la opción de "Ver usuarios".
+2. El sistema muestra una tabla con 'inputs' con los datos de los usuarios.
+3. El administrador realiza los cambios necesarios en la información de los usuarios (incluido el rol y el estado) y guarda los cambios.
+4. El sistema valida la información ingresada por el usuario y actualiza la información del usuario en la base de datos.
+5. El sistema muestra una confirmación de que la información del perfil ha sido actualizada correctamente.
 ## 10. Eliminar usuario:
 **Actor principal**: Usuario administrador
 
@@ -266,11 +266,11 @@ v. El sistema muestra una confirmación de que la información del perfil ha sid
 
 **Flujo principal**:
 
-i. El usuario selecciona la opción de "Ver usuarios".
-ii. El sistema muestra una tabla con 'inputs' con los datos de los usuarios.
-iii. El administrador hace clic sobre el icono de eliminar usuario de la fila correspondiente.
-iv. El sistema informa de que se eliminarán todos sus registros.
-v. El sistema muestra una confirmación de que la información de que el usuario ha sido borrado correctamente.
+1. El usuario selecciona la opción de "Ver usuarios".
+2. El sistema muestra una tabla con 'inputs' con los datos de los usuarios.
+3. El administrador hace clic sobre el icono de eliminar usuario de la fila correspondiente.
+4. El sistema informa de que se eliminarán todos sus registros.
+5. El sistema muestra una confirmación de que la información de que el usuario ha sido borrado correctamente.
 ## Errores
 Vamos a repasar los diferentes casos de uso analizando el flujo principal y añadiendo los flujos alternativos para contemplar los posibles errores del sistema. Puedes considerar los siguientes mensajes:
 
