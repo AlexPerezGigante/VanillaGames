@@ -181,7 +181,7 @@
                             </thead>
 
                             <tr>
-                                <form action="">
+                                <form novalidate action="" class="form">
                                     <td>
                                         <div class="containerImagen">
                                             <div
@@ -199,60 +199,90 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <input
+                                        <label class="form-label d-none" for="imagen"></label>
+                                        <input required
+                                            id="imagen"
                                             type="text"
                                             class="form-control form-control-sm"
                                             value="http://imagen.com"
                                         />
+                                        <div class="invalid-feedback">
+                                            Este campo no puede estar vacío
+                                          </div>
                                     </td>
                                     <td>
-                                        <input
-                                            type="text"
+                                        <label class="form-label d-none" for="email"></label>
+                                        <input required
+                                            id="email"
+                                            type="email"
                                             class="form-control form-control-sm"
                                             value="email@email.com"
                                         />
+                                        <div class="invalid-feedback">
+                                            El formato del email no es correcto
+                                          </div>
                                     </td>
                                     <td>
-                                        <input
+                                        <label class="form-label d-none" for="nombre"></label>
+                                        <input required
+                                            id="nombre"
                                             type="text"
                                             class="form-control form-control-sm"
                                             value="Nombre usuario"
                                         />
+                                        <div class="invalid-feedback">
+                                            Introduce un Nombre
+                                          </div>
                                     </td>
                                     <td>
-                                        <input
+                                        <label class="form-label d-none" for="apellidos"></label>
+                                        <input required
+                                            id="apellidos"
                                             type="text"
                                             class="form-control form-control-sm"
                                             value="Apellidos usuario"
                                         />
+                                        <div class="invalid-feedback">
+                                            Introduce los apellidos
+                                          </div>
                                     </td>
 
                                     <td>
-                                        <input
+                                        <label class="form-label d-none" for="fecha"></label>
+                                        <input required
+                                            id="fecha"
                                             type="date"
                                             class="form-control form-control-sm"
-                                            value="12/12/2023 proyecto"
                                         />
+                                        <div class="invalid-feedback">
+                                            Introduce una fecha válida
+                                          </div>
                                     </td>
                                     <td>
-                                        <select class="form-control form-control-sm" name="" id="">
+                                        <label class="form-label d-none" for="rol"></label>
+                                        <select id="rol" class="form-control form-control-sm" name="" id="">
                                             <option value="1">opción</option>
                                             <option value="2">opción2</option>
                                         </select>
                                     </td>
                                     <td>
-                                        <select class="form-control form-control-sm" name="" id="">
+                                        <label class="form-label d-none" for="estado"></label>
+                                        <select id="estado" class="form-control form-control-sm" name="" id="">
                                             <option value="1">opción</option>
                                             <option value="2">opción2</option>
                                         </select>
                                     </td>
-                                    <td><button class="btn btn-sm btn-success">Actualizar</button></td>
+                                    <td><input
+                                        type="submit"
+                                        class="btn btn-success"
+                                        value="Actualizar"
+                                      /></td>
                                     <td><i class="btn btn-sm btn-outline-danger bi bi-trash3"></i></td>
                                 </form>
                             </tr>
 
                             <tr>
-                                <form action="">
+                                <form novalidate action="" class="form">
                                     <td>
                                         <div class="containerImagen">
                                             <div
@@ -270,60 +300,90 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <input
+                                        <label class="form-label d-none" for="imagen"></label>
+                                        <input required
+                                            id="imagen"
                                             type="text"
                                             class="form-control form-control-sm"
                                             value="http://imagen.com"
                                         />
+                                        <div class="invalid-feedback">
+                                            Este campo no puede estar vacío
+                                          </div>
                                     </td>
                                     <td>
-                                        <input
-                                            type="text"
+                                        <label class="form-label d-none" for="email"></label>
+                                        <input required
+                                            id="email"
+                                            type="email"
                                             class="form-control form-control-sm"
                                             value="email@email.com"
                                         />
+                                        <div class="invalid-feedback">
+                                            El formato del email no es correcto
+                                          </div>
                                     </td>
                                     <td>
-                                        <input
+                                        <label class="form-label d-none" for="nombre"></label>
+                                        <input required
+                                            id="nombre"
                                             type="text"
                                             class="form-control form-control-sm"
                                             value="Nombre usuario"
                                         />
+                                        <div class="invalid-feedback">
+                                            Introduce un Nombre
+                                          </div>
                                     </td>
                                     <td>
-                                        <input
+                                        <label class="form-label d-none" for="apellidos"></label>
+                                        <input required
+                                            id="apellidos"
                                             type="text"
                                             class="form-control form-control-sm"
                                             value="Apellidos usuario"
                                         />
+                                        <div class="invalid-feedback">
+                                            Introduce los apellidos
+                                          </div>
                                     </td>
 
                                     <td>
-                                        <input
+                                        <label class="form-label d-none" for="fecha"></label>
+                                        <input required
+                                            id="fecha"
                                             type="date"
                                             class="form-control form-control-sm"
-                                            value="12/12/2023 proyecto"
                                         />
+                                        <div class="invalid-feedback">
+                                            Introduce una fecha válida
+                                          </div>
                                     </td>
                                     <td>
-                                        <select class="form-control form-control-sm" name="" id="">
+                                        <label class="form-label d-none" for="rol"></label>
+                                        <select id="rol" class="form-control form-control-sm" name="" id="">
                                             <option value="1">opción</option>
                                             <option value="2">opción2</option>
                                         </select>
                                     </td>
                                     <td>
-                                        <select class="form-control form-control-sm" name="" id="">
+                                        <label class="form-label d-none" for="estado"></label>
+                                        <select id="estado" class="form-control form-control-sm" name="" id="">
                                             <option value="1">opción</option>
                                             <option value="2">opción2</option>
                                         </select>
                                     </td>
-                                    <td><button class="btn btn-sm btn-success">Actualizar</button></td>
+                                    <td><input
+                                        type="submit"
+                                        class="btn btn-success"
+                                        value="Actualizar"
+                                      /></td>
                                     <td><i class="btn btn-sm btn-outline-danger bi bi-trash3"></i></td>
                                 </form>
                             </tr>
 
                             <tr>
-                                <form action="">
+                                <form novalidate action="" class="form">
                                     <td>
                                         <div class="containerImagen">
                                             <div
@@ -341,54 +401,84 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <input
+                                        <label class="form-label d-none" for="imagen"></label>
+                                        <input required
+                                            id="imagen"
                                             type="text"
                                             class="form-control form-control-sm"
                                             value="http://imagen.com"
                                         />
+                                        <div class="invalid-feedback">
+                                            Este campo no puede estar vacío
+                                          </div>
                                     </td>
                                     <td>
-                                        <input
-                                            type="text"
+                                        <label class="form-label d-none" for="email"></label>
+                                        <input required
+                                            id="email"
+                                            type="email"
                                             class="form-control form-control-sm"
                                             value="email@email.com"
                                         />
+                                        <div class="invalid-feedback">
+                                            El formato del email no es correcto
+                                          </div>
                                     </td>
                                     <td>
-                                        <input
+                                        <label class="form-label d-none" for="nombre"></label>
+                                        <input required
+                                            id="nombre"
                                             type="text"
                                             class="form-control form-control-sm"
                                             value="Nombre usuario"
                                         />
+                                        <div class="invalid-feedback">
+                                            Introduce un Nombre
+                                          </div>
                                     </td>
                                     <td>
-                                        <input
+                                        <label class="form-label d-none" for="apellidos"></label>
+                                        <input required
+                                            id="apellidos"
                                             type="text"
                                             class="form-control form-control-sm"
                                             value="Apellidos usuario"
                                         />
+                                        <div class="invalid-feedback">
+                                            Introduce los apellidos
+                                          </div>
                                     </td>
 
                                     <td>
-                                        <input
+                                        <label class="form-label d-none" for="fecha"></label>
+                                        <input required
+                                            id="fecha"
                                             type="date"
                                             class="form-control form-control-sm"
-                                            value="12/12/2023 proyecto"
                                         />
+                                        <div class="invalid-feedback">
+                                            Introduce una fecha válida
+                                          </div>
                                     </td>
                                     <td>
-                                        <select class="form-control form-control-sm" name="" id="">
+                                        <label class="form-label d-none" for="rol"></label>
+                                        <select id="rol" class="form-control form-control-sm" name="" id="">
                                             <option value="1">opción</option>
                                             <option value="2">opción2</option>
                                         </select>
                                     </td>
                                     <td>
-                                        <select class="form-control form-control-sm" name="" id="">
+                                        <label class="form-label d-none" for="estado"></label>
+                                        <select id="estado" class="form-control form-control-sm" name="" id="">
                                             <option value="1">opción</option>
                                             <option value="2">opción2</option>
                                         </select>
                                     </td>
-                                    <td><button class="btn btn-sm btn-success">Actualizar</button></td>
+                                    <td><input
+                                        type="submit"
+                                        class="btn btn-success"
+                                        value="Actualizar"
+                                      /></td>
                                     <td><i class="btn btn-sm btn-outline-danger bi bi-trash3"></i></td>
                                 </form>
                             </tr>
@@ -422,5 +512,20 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"
         ></script>
+        <script>
+            //Capturamos el formulario en una variable
+            const formulario = document.querySelector("form")
+            //Detectamos su evento submit (enviar)
+            formulario.addEventListener("submit", (event) => {
+              //Comprobamos si el formulario no valida 
+              if (!formulario.checkValidity()) {
+                //Detenemos el evento enviar (submit)
+                event.preventDefault()
+                event.stopPropagation()
+              }
+              //Y añadimos la clase 'was-validate' para que se muestren los mensajes
+              formulario.classList.add('was-validated')
+            });
+          </script>
     </body>
 </html>
