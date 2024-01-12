@@ -8,7 +8,7 @@ import './scss/styles.scss'
 
 //Importamos vista home
 async function cargarVista () {
-  const componente = await import('./vistas/proyectoDetalleVista')
+  const componente = await import('./vistas/proyectoNuevoVista')
   const vista = componente.default
   //inyectamos vista home
   document.querySelector('main').innerHTML = vista.template
