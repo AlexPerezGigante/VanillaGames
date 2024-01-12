@@ -42,6 +42,7 @@ export const header = {
             <button class="ms-2 btn btn-success">
               Iniciar sesión
               <i class="bi bi-box-arrow-in-right"></i>
+              
             </button>
           </li>
           <li class="nav-item">
