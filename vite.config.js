@@ -27,6 +27,7 @@ export default {
         outDir: path.resolve(__dirname, 'dist'),
         minify: false,
     },
+    publicDir: 'assets',
     server: {
         // port: 8080,
         hot: true
