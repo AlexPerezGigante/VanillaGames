@@ -14,8 +14,10 @@ async function cargarVista () {
   document.querySelector('main').innerHTML = vista.template
   // Ejecutamos lógica de la vista
   vista.script()
+  
 }
 cargarVista()
+
 
 //inyectamos componente header
 document.querySelector('header').innerHTML = header.template
