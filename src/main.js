@@ -9,6 +9,7 @@ import './scss/styles.scss'
 
 //inyectamos componente header
 document.querySelector('header').innerHTML = header.template
+header.script()
 
 // Inyectamos componente footer
 document.querySelector('footer').innerHTML = footer.template
