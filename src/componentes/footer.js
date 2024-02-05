@@ -1,3 +1,5 @@
+
+
 export const footer = {
     template: //html
     `
@@ -19,4 +21,5 @@ export const footer = {
     </nav>
 
     `
+    
 }
