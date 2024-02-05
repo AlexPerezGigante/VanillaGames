@@ -1,5 +1,6 @@
 import { ls } from "./funciones"
 import { menuRol, menuUsuario } from "./menus"
+import { editarPerfil } from "./editarPerfil"
 export const header = {
     template: //html
     `
@@ -43,6 +44,8 @@ export const header = {
         <div id="menuRol"></div>
         <!-- Manu usuario -->
         <div id="menuUsuario"></div>
+
+        <div id="modal"></div>
       </div>
     </div>
   </nav>
@@ -50,12 +53,14 @@ export const header = {
     script: () => {
       console.log('header cargado')
       
+      
       // simulamos inicio de sesion
-      ls.setUsuario({ email: 'manolito@email.com', rol: 'registrado' })
+      ls.setUsuario({ email: 'manolito@email.com', rol: 'admin' })
 
 
       const rolUsuario = ls.getUsuario().rol
 
+      document.querySelector('#modal').innerHTML = editarPerfil.template
       switch (rolUsuario) {
         case 'registrado':
           // menu rol
