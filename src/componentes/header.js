@@ -55,7 +55,7 @@ export const header = {
       
       
       // simulamos inicio de sesion
-      ls.setUsuario({ email: 'manolito@email.com', rol: 'no logueado' })
+      ls.setUsuario({ email: 'manolito@email.com', rol: 'admin' })
 
 
       const rolUsuario = ls.getUsuario().rol
