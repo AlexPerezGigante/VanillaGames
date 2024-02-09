@@ -1,3 +1,4 @@
+import { proyectos } from "../bd/datosPrueba"
 export default {
     template: //html
     `
@@ -78,7 +79,7 @@ export default {
                                     <th></th>
                                 </tr>
                             </thead>
-
+                            <tbody id="tbodyProyectos">
                             <tr>
                                 <td>
                                     <div class="containerImagen">
@@ -121,6 +122,7 @@ export default {
                                 <td>13/12/2021</td>
                                 <td>?</td>
                             </tr>
+                            </tbody>
                         </table>
                     </div>
                     <!-- tarjetas -->
@@ -348,6 +350,7 @@ export default {
     `,
     script: () =>{
        // Función para pintar tabla a partir de array
+       console.log('proyectos.script')
     const pintaTabla = (proyectos) => {
         let tbodyProyectos = ''
         // Para cada proyecto del array 'proyectos'
@@ -386,6 +389,7 @@ export default {
               
         `
         })
+        console.log(tbodyProyectos)
         // inyectamos el resultado en el tbody
         document.querySelector('#tbodyProyectos').innerHTML = tbodyProyectos
       }
