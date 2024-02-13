@@ -8,13 +8,13 @@ export default {
     <!-- tabs -->
     <div class="row mt-5">
         <div class="col-12">
-            <ul class="nav nav-tabs">
-                <li class="nav-item w-50" id="botonUsuariosLi">
-                    <button class="btn border-0 text-primary fichaUsuarios" id="botonUsuarios">Usuarios</button>
+            <ul class="nav nav-tabs fichaProyectos">
+                <li class="nav-item w-50 fichaUsuarios" id="botonUsuariosLi">
+                    <button class="btn border-0 text-primary " id="botonUsuarios">Usuarios</button>
 
                 </li>
-                <li class="nav-item w-50 border border-bottom-0" id="botonProyectosLi">
-                    <button class="btn border-0 text-dark fichaProyectos" id="botonProyectos">Proyectos</button>
+                <li class="nav-item w-50 border border-bottom-0 " id="botonProyectosLi">
+                    <button class="btn border-0 text-dark " id="botonProyectos">Proyectos</button>
                 </li>
             </ul>
         </div>
@@ -50,6 +50,7 @@ export default {
             <table
                 class="table table-hover align-middle mt-3"
                 style="min-width: 1000px"
+                id="tabProyectos"
             >
                 <thead>
                     <tr>
