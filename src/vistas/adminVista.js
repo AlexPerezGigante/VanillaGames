@@ -8,13 +8,13 @@ export default {
     <!-- tabs -->
     <div class="row mt-5">
         <div class="col-12">
-            <ul class="nav nav-tabs fichaProyectos">
-                <li class="nav-item w-50 fichaUsuarios" id="botonUsuariosLi">
-                    <button class="btn border-0 text-primary " id="botonUsuarios">Usuarios</button>
+            <ul class="nav nav-tabs ">
+                <li class="nav-item w-50 " id="botonUsuariosLi">
+                    <button class="btn border-0 text-primary fichaUsuarios" id="botonUsuarios">Usuarios</button>
 
                 </li>
                 <li class="nav-item w-50 border border-bottom-0 " id="botonProyectosLi">
-                    <button class="btn border-0 text-dark " id="botonProyectos">Proyectos</button>
+                    <button class="btn border-0 text-dark fichaProyectos active" id="botonProyectos">Proyectos</button>
                 </li>
             </ul>
         </div>
@@ -136,10 +136,11 @@ export default {
 
 
 <!-- tabla usuarios-->
-<div class="col-12 d-none" id="tablaUsuarios" style="overflow-x: auto">
+<div class="col-12 " id="tablaUsuarios" style="overflow-x: auto">
     <table
         class="table table-hover align-middle mt-3"
         style="min-width: 1200px"
+        id="tabUsuarios"
     >
         <thead>
             <tr>
@@ -481,33 +482,34 @@ export default {
 </div>
     `,
     script: ()=>{
-        const botonProyectos= document.querySelector('#botonProyectos')
-        botonProyectos.addEventListener('click',cargarProyectos)
-        const botonUsuarios= document.querySelector('#botonUsuarios')
-        botonUsuarios.addEventListener('click',cargarUsuarios)
-        function cargarProyectos(){
-            event.preventDefault();
-            console.log('cargando proyectos')
-            document.getElementById("botonProyectosLi").className = "nav-item w-50 border border-bottom-0"
-            document.getElementById("botonUsuariosLi").className = "nav-item w-50"
-            document.getElementById("botonProyectos").className = "btn border-0 text-dark"
-            document.getElementById("botonUsuarios").className = "btn border-0 text-primary"
-            document.getElementById("tablaProyectos").className = "col-12"
-            document.getElementById("tablaUsuarios").className ="col-12 d-none"
-        }
-        function cargarUsuarios(){
-            event.preventDefault();
-            console.log('cargando Usuarios')
+        // const botonProyectos= document.querySelector('#botonProyectos')
+        // botonProyectos.addEventListener('click',cargarProyectos)
+        // const botonUsuarios= document.querySelector('#botonUsuarios')
+        // botonUsuarios.addEventListener('click',cargarUsuarios)
+        // function cargarProyectos(){
+        //     event.preventDefault();
+        //     console.log('cargando proyectos')
+        //     document.getElementById("botonProyectosLi").className = "nav-item w-50 border border-bottom-0"
+        //     document.getElementById("botonUsuariosLi").className = "nav-item w-50"
+        //     document.getElementById("botonProyectos").className = "btn border-0 text-dark"
+        //     document.getElementById("botonUsuarios").className = "btn border-0 text-primary"
+        //     document.getElementById("tablaProyectos").className = "col-12"
+        //     document.getElementById("tablaUsuarios").className ="col-12 d-none"
+        // }
+        // // function cargarUsuarios(){
+        //     event.preventDefault();
+        //     console.log('cargando Usuarios')
             
-            document.getElementById("tablaProyectos").className = "col-12 d-none"
-            document.getElementById("tablaUsuarios").className = "col-12"
-            document.getElementById("botonProyectosLi").className = "nav-item w-50"
-            document.getElementById("botonUsuariosLi").className = "nav-item w-50 border border-bottom-0"
-            document.getElementById("botonProyectos").className = "btn border-0 text-primary"
-            document.getElementById("botonUsuarios").className = "btn border-0 text-dark"
+        //     document.getElementById("tablaProyectos").className = "col-12 d-none"
+        //     document.getElementById("tablaUsuarios").className = "col-12"
+        //     document.getElementById("botonProyectosLi").className = "nav-item w-50"
+        //     document.getElementById("botonUsuariosLi").className = "nav-item w-50 border border-bottom-0"
+        //     document.getElementById("botonProyectos").className = "btn border-0 text-primary"
+        //     document.getElementById("botonUsuarios").className = "btn border-0 text-dark"
 
-        }
+        // }
          //Capturamos el formulario en una variable
+         
          const formulario = document.querySelector("form")
          //Detectamos su evento submit (enviar)
          formulario.addEventListener("submit", (event) => {
@@ -529,9 +531,10 @@ export default {
         // Capturamos proyectos y guardamos en variable para poder ser filtrada
         const datosProyectos = proyectos
         const datosUsuarios = perfiles
-
+        
         // Definimos que por defecto se muestran 'proyectos'
         let selectUsuarios = true
+        
         // *** Detectamos si se cambia de proyectos a usuarios al hacer click en las pestañas ***
         document.querySelector('.nav-tabs').addEventListener('click', (event) => {
         if (event.target.classList.contains('fichaUsuarios')) {
@@ -543,20 +546,23 @@ export default {
             document.querySelector('#tabUsuarios').classList.add('d-block')
             document.querySelector('#tabUsuarios').classList.remove('d-none')
             document.querySelector('#tabProyectos').classList.add('d-none')
+            
         } else {
             // Si click en Proyectos cambiamos pestaña activa
-           
-            document.querySelector('.fichaUsuarios').classList.remove('active')
             document.querySelector('.fichaProyectos').classList.add('active')
+            
+            document.querySelector('.fichaUsuarios').classList.remove('active')
+            
             selectUsuarios = false
             console.log('tabProyectos')
             document.querySelector('#tabProyectos').classList.add('d-block')
             document.querySelector('#tabProyectos').classList.remove('d-none')
             document.querySelector('#tabUsuarios').classList.add('d-none')
+            
         }
         // Actualizamos los datos en el panel central
-        pintaProyectos(datosProyectos)
         pintaUsuarios(datosUsuarios)
+        pintaProyectos(datosProyectos)
         })
         
         // *** FUNCIÓN PARA PINTAR TABLA PROYECTOS A PARTIR DE ARRAY datos ***
@@ -570,15 +576,69 @@ export default {
             >
             <thead>
                 <tr>
-                <!-- Encabezados de la tabla -->
-                </tr>
+                        <th></th>
+                        <th>
+                            Nombre <span><i class="bi bi-caret-down"></i></span>
+                        </th>
+                        <th>
+                            Descripción <span><i class="bi bi-caret-up"></i></span>
+                        </th>
+                        <th>
+                            Enlace <span><i class="bi bi-caret-up"></i></span>
+                        </th>
+                        <th>Repositorio</th>
+                        <th>
+                            Autor <span><i class="bi bi-caret-up"></i></span>
+                        </th>
+                        <th>
+                            Fecha <span><i class="bi bi-caret-up"></i></span>
+                        </th>
+                        <th>
+                            Estado <span><i class="bi bi-caret-up"></i></span>
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
             </thead>
             <tbody>
             `
             // Para cada proyecto en el array 'proyectosFiltrados'
             proyectosFiltrados.forEach(proyecto => {
             // Genera filas de datos de proyecto en la tabla
+            tablaProyectos += `
+            <tr>
+            <td>
+              <div class="containerImagen">
+                <img 
+                  width="200px" 
+                  src=${proyecto.imagen || 'images/imagenVacia.png'} 
+                  alt="imagen proyecto" />
+              </div>
+            </td>
+            <td>${proyecto.nombre}</td>
+            <td>${proyecto.descripcion}</td>
+            <td><a href="${proyecto.enlace}"><i class="bi bi-link fs-4"></i></a></td>
+            <td><a href="${proyecto.repositorio}"><i class="bi bi-folder-symlink fs-4"></i></a></td>
+            <td>${proyecto.nombre_usuario} ${proyecto.apellidos_usuario}</td>
+            <td>${proyecto.created_at}</td>
+            <td>${proyecto.estado}</td>
+            <td>
+              <a
+              data-user_id = ${proyecto.user_id}
+              class="d-none d-sm-inline btn btn-sm btn-outline-primary bi bi-pencil"
+              ></a>
+            </td>
+            <td>
+              <a
+                data-user_id = ${proyecto.user_id}
+                class="d-none d-sm-inline btn btn-sm btn-outline-danger bi bi-trash3"
+              ></a>
+            </td>
+          </tr>
+            `
+
             })
+
             tablaProyectos += // html
             `
             </tbody>
@@ -586,6 +646,193 @@ export default {
             `
             // Inyecta el resultado en el contenedor con el id 'tabProyectos'
             document.querySelector('#tabProyectos').innerHTML = tablaProyectos
+        }
+
+        const pintaUsuarios = (usuariosFiltrados) => {
+            let tablaUsuarios = // html
+            `
+            <!-- Tabla de proyectos -->
+            <table
+            class="table table-hover align-middle mt-3"
+            style="min-width: 1000px"
+            >
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        URL imagen <span><i class="bi bi-caret-down"></i></span>
+                    </th>
+                    <th>
+                        Email <span><i class="bi bi-caret-down"></i></span>
+                    </th>
+                    <th>
+                        Nombre <span><i class="bi bi-caret-up"></i></span>
+                    </th>
+                    <th>
+                        Apellidos <span><i class="bi bi-caret-up"></i></span>
+                    </th>
+                    <th>
+                        Fecha <span><i class="bi bi-caret-up"></i></span>
+                    </th>
+                    <th>
+                        Rol <span><i class="bi bi-caret-up"></i></span>
+                    </th>
+                    <th>
+                        Estado <span><i class="bi bi-caret-up"></i></span>
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            `
+            // Para cada proyecto en el array 'proyectosFiltrados'
+            usuariosFiltrados.forEach(usuario => {
+            // Genera filas de datos de proyecto en la tabla
+            tablaUsuarios += `
+            <tr>
+            <form novalidate action="" class="form" id="formAdminUsuarios">
+                <td>
+                    <div class="containerImagen">
+                        <div
+                            class="rounded-circle d-flex align-items-end justify-content-end"
+                            style="
+                                background-image: url(${usuario.avatar});
+                                width: 50px;
+                                height: 50px;
+                                background-size: cover;
+                                background-position: center;
+                            "
+                        >
+                            <i class="btn btn-success btn-sm rounded-circle bi bi-pencil"></i>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <label class="form-label d-none" for="imagen"></label>
+                    <input required
+                        id="imagen"
+                        type="text"
+                        class="form-control form-control-sm"
+                        value="${usuario.avatar}"
+                    />
+                    <div class="invalid-feedback">
+                        Este campo no puede estar vacío
+                      </div>
+                </td>
+                <td>
+                    <label class="form-label d-none" for="email"></label>
+                    <input required
+                        id="email"
+                        type="email"
+                        class="form-control form-control-sm"
+                        value="${usuario.email}"
+                    />
+                    <div class="invalid-feedback">
+                        El formato del email no es correcto
+                      </div>
+                </td>
+                <td>
+                    <label class="form-label d-none" for="nombre"></label>
+                    <input required
+                        id="nombre"
+                        type="text"
+                        class="form-control form-control-sm"
+                        value="${usuario.nombre}"
+                    />
+                    <div class="invalid-feedback">
+                        Introduce un Nombre
+                      </div>
+                </td>
+                <td>
+                    <label class="form-label d-none" for="apellidos"></label>
+                    <input required
+                        id="apellidos"
+                        type="text"
+                        class="form-control form-control-sm"
+                        value="${usuario.apellidos}"
+                    />
+                    <div class="invalid-feedback">
+                        Introduce los apellidos
+                      </div>
+                </td>
+
+                <td>
+                    <label class="form-label d-none" for="fecha"></label>
+                    <input required
+                        id="fecha"
+                        type="date"
+                        value="${usuario.created_at}"
+                        class="form-control form-control-sm"
+                    />
+                    <div class="invalid-feedback">
+                        Introduce una fecha válida
+                      </div>
+                </td>
+                <td>
+                    <label class="form-label d-none" for="rol"></label>
+                    <select id="rol" class="form-control form-control-sm" name="" id="">
+                        `
+                        switch(usuario.rol){
+                            case "registrado":
+                                tablaUsuarios+=`<option value="registrado">Registrado</option>
+                                <option value="desarrollador">Desarrollador</option>
+                                <option value="admin">Admin</option>`
+                            break;
+                            case "desarrollador":
+                                tablaUsuarios+=`<option value="desarrollador">Desarrollador</option>
+                                <option value="registrado">Registrado</option>
+                                <option value="admin">Admin</option>`
+                            break;
+                            case "admin":
+                                tablaUsuarios+=`<option value="admin">Admin</option>
+                                <option value="registrado">Registrado</option>
+                                <option value="desarrollador">Desarrollador</option>
+                                `  
+                            break;
+                        }
+        tablaUsuarios+=`
+                    </select>
+                </td>
+                <td>
+                    <label class="form-label d-none" for="estado"></label>
+                    <select id="estado" class="form-control form-control-sm" name="" id="">
+                    `
+                    if(usuario.estado=="Activo"){
+                        tablaUsuarios+=`<option value="Activo">Activo</option>
+                        <option value="Inactivo">Inactivo</option>
+                        `
+                    }else{
+                        tablaUsuarios+=`
+                        <option value="Inactivo">Inactivo</option>
+                        <option value="Activo">Activo</option>
+                        `
+                    }
+                    tablaUsuarios+=`
+                        
+                    </select>
+                </td>
+                <td><input
+                    type="submit"
+                    class="btn btn-success"
+                    value="Actualizar"
+                  /></td>
+                <td><i class="btn btn-sm btn-outline-danger bi bi-trash3"></i></td>
+            </form>
+        </tr>
+
+            `
+
+            })
+
+            tablaUsuarios += // html
+            `
+            </tbody>
+            </table>
+            `
+            // Inyecta el resultado en el contenedor con el id 'tabProyectos'
+            // console.log(tablaUsuarios)
+            document.querySelector('#tabUsuarios').innerHTML = tablaUsuarios
         }
         // *** FILTRO PARA BUSCADOR ***
         // Capturamos el input de búsqueda
