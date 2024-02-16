@@ -35,6 +35,7 @@ export const enrutador = {
         // inyectamos vista y ejecutamos su script
         document.querySelector('main').innerHTML = vista.template
         // A los script les pasamos el parametro que hemos extraido de la ruta. Así podemos pasar, por ejemplo, el id de un proyecto
+        console.log('vista' ,vista ,'parametro' ,parametro)
         vista.script(parametro)
       } else {
         window.location = '#/404'

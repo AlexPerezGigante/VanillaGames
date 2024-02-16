@@ -1,3 +1,4 @@
+import { proyectos } from "../bd/datosPrueba"
 export default {
     template: //html
     `
@@ -78,7 +79,7 @@ export default {
                                     <th></th>
                                 </tr>
                             </thead>
-
+                            <tbody id="tbodyProyectos">
                             <tr>
                                 <td>
                                     <div class="containerImagen">
@@ -121,6 +122,7 @@ export default {
                                 <td>13/12/2021</td>
                                 <td>?</td>
                             </tr>
+                            </tbody>
                         </table>
                     </div>
                     <!-- tarjetas -->
@@ -347,6 +349,52 @@ export default {
             </div>
     `,
     script: () =>{
-        // no tiene formulario
+       // Función para pintar tabla a partir de array
+       console.log('proyectos.script')
+    const pintaTabla = (proyectos) => {
+        let tbodyProyectos = ''
+        // Para cada proyecto del array 'proyectos'
+        proyectos.forEach(proyecto => {
+        // sumamos un tr con los datos del proyecto
+          tbodyProyectos += `
+        <tr>
+          <td>
+            <div class="containerImagen">
+              <img 
+                width="200px" 
+                src=${proyecto.imagen || 'images/imagenVacia.png'} 
+                alt="imagen proyecto" />
+            </div>
+          </td>
+          <td>${proyecto.nombre}</td>
+          <td>${proyecto.descripcion}</td>
+          <td><a href="${proyecto.enlace}"><i class="bi bi-link fs-4"></i></a></td>
+          <td><a href="${proyecto.repositorio}"><i class="bi bi-folder-symlink fs-4"></i></a></td>
+          <td>${proyecto.nombre_usuario} ${proyecto.apellidos_usuario}</td>
+          <td>${proyecto.created_at}</td>
+          <td>${proyecto.estado}</td>
+          <td>
+            <a
+            data-user_id = ${proyecto.user_id}
+            class="d-none d-sm-inline btn btn-sm btn-outline-primary bi bi-pencil"
+            ></a>
+          </td>
+          <td>
+            <a
+              data-user_id = ${proyecto.user_id}
+              class="d-none d-sm-inline btn btn-sm btn-outline-danger bi bi-trash3"
+            ></a>
+          </td>
+        </tr>
+              
+        `
+        })
+        console.log(tbodyProyectos)
+        // inyectamos el resultado en el tbody
+        document.querySelector('#tbodyProyectos').innerHTML = tbodyProyectos
+      }
+      
+      // Ejecutamos la función
+      pintaTabla(proyectos)
     }
 }
