@@ -1,5 +1,6 @@
 import { proyectos, perfiles } from "../bd/datosPrueba"
 import { ls } from "../componentes/funciones"
+import { editarImagenPerfil } from "../componentes/editarImagenPerfil"
 export default {
     template: //html
     `
@@ -510,18 +511,18 @@ export default {
         // }
          //Capturamos el formulario en una variable
          
-         const formulario = document.querySelector("form")
+         
          //Detectamos su evento submit (enviar)
-         formulario.addEventListener("submit", (event) => {
-           //Comprobamos si el formulario no valida 
-           if (!formulario.checkValidity()) {
-             //Detenemos el evento enviar (submit)
-             event.preventDefault()
-             event.stopPropagation()
-           }
-           //Y añadimos la clase 'was-validate' para que se muestren los mensajes
-           formulario.classList.add('was-validated')
-         });
+        //  formulario.addEventListener("submit", (event) => {
+        //    //Comprobamos si el formulario no valida 
+        //    if (!formulario.checkValidity()) {
+        //      //Detenemos el evento enviar (submit)
+        //      event.preventDefault()
+        //      event.stopPropagation()
+        //    }
+        //    //Y añadimos la clase 'was-validate' para que se muestren los mensajes
+        //    formulario.classList.add('was-validated')
+        //  });
 
          // Capturamos los datos del usuario logueado
         const usuario = ls.getUsuario()
@@ -625,13 +626,13 @@ export default {
             <td>
               <a
               data-user_id = ${proyecto.user_id}
-              class="d-none d-sm-inline btn btn-sm btn-outline-primary bi bi-pencil"
+              class="d-none d-sm-inline btn btn-sm btn-outline-primary bi bi-pencil botonAdmin botonEditar"
               ></a>
             </td>
             <td>
               <a
                 data-user_id = ${proyecto.user_id}
-                class="d-none d-sm-inline btn btn-sm btn-outline-danger bi bi-trash3"
+                class="d-none d-sm-inline btn btn-sm btn-outline-danger bi bi-trash3 botonAdmin botonBorrar"
               ></a>
             </td>
           </tr>
@@ -651,7 +652,7 @@ export default {
         const pintaUsuarios = (usuariosFiltrados) => {
             let tablaUsuarios = // html
             `
-            <!-- Tabla de proyectos -->
+            <!-- Tabla de usuarios -->
             <table
             class="table table-hover align-middle mt-3"
             style="min-width: 1000px"
@@ -814,15 +815,13 @@ export default {
                 </td>
                 <td><input
                     type="submit"
-                    class="btn btn-success"
+                    class="btn btn-success "
                     value="Actualizar"
                   /></td>
-                <td><i class="btn btn-sm btn-outline-danger bi bi-trash3"></i></td>
+                <td><i class="btn btn-sm btn-outline-danger bi bi-trash3 "></i></td>
             </form>
         </tr>
-
             `
-
             })
 
             tablaUsuarios += // html
@@ -879,8 +878,10 @@ export default {
         pintaProyectos(datosProyectos)
         pintaUsuarios(datosUsuarios)
         })
+        const formulario = document.querySelector("form")
         // *** VALIDACION DE FORMULARIOS CON BOOTSTRAP ***
         formulario.addEventListener('change', (e) => {
+            console.log('cambiaform')
             // Comprobamos si el formulario no valida
             if (!formulario.checkValidity()) {
             console.log('No valida')
@@ -935,6 +936,7 @@ export default {
     const formularioAdmin = document.querySelector('#formAdminUsuarios')
     // Gestión de click sobre botones dentro del formulario
     formularioAdmin.addEventListener('click', (e) => {
+        console.log('click en form')
       e.preventDefault()
       e.stopPropagation()
 
